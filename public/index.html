@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="token.png">
 </head>
 <body>
         <!-- Loader -->
@@ -29,7 +30,7 @@
                 <a href="#resume" class="nav-link">Experience</a>
                 <a href="#portfolio" class="nav-link">Portfolio</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="Resume_DeepakNelson_2025.pdf" class="btn btn-primary" style="margin-left:1.5rem;" download>Download CV</a>
+                <a href="Resume_DeepakNelson_2025.pdf" class="btn btn-primary" style="margin-left:1.5rem;" download target="_blank">Download CV</a>
             </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -45,7 +46,7 @@
             <h1 class="hero-title">
                 <span class="typing-text">DEEPAK NELSON</span>
             </h1>
-            <p class="hero-subtitle">Passionate Game Developer from Bangalore, India</p>
+            <p class="hero-subtitle">Game Developer turning wild ideas into polished and fun adventures - one level at a time.</p>
             <div class="social-links">
                 <a href="https://twitter.com/thedrakun" target="_blank" class="social-link">
                     <i class="fab fa-twitter"></i>
@@ -105,7 +106,7 @@
                         <div class="info-group">
                             <div class="info-item">
                                 <i class="fas fa-cogs"></i>
-                                <span><strong>Contributions:</strong> Gameplay Systems & LiveOps<br><small>Architected scalable gameplay, monetization, and LiveOps for top-performing mobile titles</small></span>
+                                    <span><strong>Contributions:</strong> Gameplay Systems & Technical Art Integration<br><small>Architected scalable gameplay, monetization, and rapid prototyping for top-performing mobile titles</small></span>
                             </div>
                             <div class="info-item">
                                 <i class="fas fa-rocket"></i>
@@ -227,7 +228,7 @@
                             <div class="timeline-date">Jun 2024 - Present</div>
                             <div class="timeline-content">
                                 <h4>Unity Game Developer</h4>
-                                <h5>Super Huge Studio, Bengaluru</h4>
+                                <h5>Super Huge Studios, Bengaluru</h4>
                                 <p><strong>Key Projects:</strong></p>
                                 
                                 <div class="project-highlight">
@@ -250,7 +251,7 @@
                                 </div>
                                 
                                 <div class="project-highlight">
-                                    <h6>Project Shootopia – Real World Arcade Shooter</h5>
+                                    <h6>Project Shootopia – Immersive Virtual Arcade Shooting Games with Projection Project</h5>
                                     <ul>
                                         <li>Led front-end architecture and team development for 2 arcade shooter games</li>
                                         <li>Built WebSocket-based aiming coordination system for 0.05ms laser detection accuracy</li>
@@ -281,11 +282,11 @@
                             <div class="timeline-date">2019 - 2021</div>
                             <div class="timeline-content">
                                 <h4>Master of Science in Game Technology</h4>
-                                <h5>Alagappa University, Karaikudi, Tamil Nadu</h5>
+                                <h5>ICAT Design and Media College, Bangalore, Karnataka</h5>
                                 <ul>
-                                    <li>Achieved top rank in the Master's program - turns out I'm pretty good at this game development thing!</li>
+                                    <li>Achieved top rank in the Master's program, proving excellence in academics and practical skills</li>
                                     <li>Led the college's IP Project as Lead Gameplay Developer - my first taste of leading a game team</li>
-                                    <li>Dove deep into game technology, engine architecture, and advanced programming concepts</li>
+                                    <li>Dove deep into game technology, game architecture, and advanced programming concepts</li>
                                 </ul>
                             </div>
                         </div>
@@ -347,6 +348,22 @@
                         <div class="portfolio-links">
                             <a href="https://play.google.com/store/apps/details?id=com.superhuge.catwool&hl=en_IN" target="_blank" class="portfolio-link" onclick="event.stopPropagation()">
                                 <i class="fab fa-google-play"></i>
+                            </a>
+                            <span class="info-icon" title="More Info"><i class="fas fa-info-circle"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="action" data-project="shootopia">
+                    <div class="portfolio-image">
+                        <img src="images/icons/shootopia/shootopia.png" alt="Shootopia" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Shootopia</h4>
+                        <p>Immersive Virtual Arcade Shooting Game with Projection</p>
+                        <div class="portfolio-links">
+                            <!-- <a href="https://play.google.com/store/apps/details?id=com.flickgames.cube.survivor" target="_blank" class="portfolio-link has-info" onclick="event.stopPropagation()"> -->
+                                <!-- <i class="fab fa-google-play"></i> -->
                             </a>
                             <span class="info-icon" title="More Info"><i class="fas fa-info-circle"></i></span>
                         </div>
@@ -416,7 +433,7 @@
                         </div>
                     </div>
                 </div>
-                
+            
                 <div class="portfolio-item" data-category="action" data-project="mototrail">
                     <div class="portfolio-image">
                         <img src="images/icons/mototrail/moto.png" alt="MotoTrail Extreme Bike" class="portfolio-img">
@@ -449,7 +466,7 @@
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="puzzle" data-project="find-match-3d">
+                <!-- <div class="portfolio-item" data-category="puzzle" data-project="find-match-3d">
                     <div class="portfolio-image">
                         <img src="images/icons/find-match-3d/fm3d.png" alt="Find Match 3D" class="portfolio-img">
                     </div>
@@ -460,10 +477,10 @@
                             <a href="https://play.google.com/store/apps/details?id=com.flickgames.findmatch3d" target="_blank" class="portfolio-link has-info" onclick="event.stopPropagation()">
                                 <i class="fab fa-google-play"></i>
                             </a>
-                            <!-- <span class="info-icon" title="More Info"><i class="fas fa-info-circle"></i></span> -->
+                            <span class="info-icon" title="More Info"><i class="fas fa-info-circle"></i></span>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
                 <div class="portfolio-item" data-category="puzzle" data-project="draw-2-drive">
                     <div class="portfolio-image">
@@ -531,7 +548,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>My Address</h4>
-                            <p>Bangalore, Karnataka<br>Pincode: 560016</p>
+                            <p>Bangalore, Karnataka, India</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -572,7 +589,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form">
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/xzdbwvrk" method="POST">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
@@ -586,6 +603,7 @@
                         <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div id="form-status" style="margin-top:10px;"></div>
                 </form>
             </div>
         </div>
@@ -595,7 +613,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Designed by <a href="https://www.linkedin.com/in/thedrakun/" target="_blank">Deepak Nelson</a></p>
+                <p>&copy; 2025 Designed by <a href="https://www.linkedin.com/in/thedrakun/" target="_blank">Deepak Nelson</a></p>
             </div>
         </div>
     </footer>
@@ -634,7 +652,7 @@
                                     <strong>Category:</strong> <span id="modal-category">Development</span>
                                 </div>
                                 <div class="info-row">
-                                    <strong>Organization:</strong> <span id="modal-organization">Flick Game Studios</span>
+                                    <strong>Organization:</strong> <span id="modal-organization">Super Huge Studios</span>
                                 </div>
                                 <div class="info-row">
                                     <strong>Production date:</strong> <span id="modal-date">2023</span>

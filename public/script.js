@@ -230,10 +230,10 @@ function initializePortfolioFilter() {
 // Contact form functionality
 function initializeContactForm() {
     const contactForm = document.getElementById('contact-form');
-    
-    contactForm.addEventListener('submit', (e) => {
+    const status = document.getElementById('form-status');
+    if (!contactForm) return;
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
         const formData = new FormData(contactForm);
         const data = {
             name: formData.get('name'),
@@ -241,14 +241,26 @@ function initializeContactForm() {
             subject: formData.get('subject'),
             message: formData.get('message')
         };
-        
-        // Validate form
         if (validateForm(data)) {
-            // Show success message
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-            contactForm.reset();
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                if (response.ok) {
+                    showNotification("Thanks for your message!", 'success');
+                    contactForm.reset();
+                } else {
+                    showNotification("Oops! There was a problem.", 'error');
+                }
+            } catch (error) {
+                showNotification("Oops! There was a problem.", 'error');
+            }
         } else {
-            showNotification('Please fill in all fields correctly.', 'error');
+            showNotification("Please fill in all fields correctly.", 'error');
         }
     });
 }
