@@ -106,7 +106,7 @@ const portfolioData = {
             rolesContributions: 'For Mototrail, I focused on building an intuitive, responsive bike controller and implemented a variety of obstacles, timed elements, and gravity modifiers to keep gameplay exciting. Working closely with the designer, I translated complex level designs and UI features into engaging mechanics. The biggest challenges were designing unique obstacles and UI elements that fit the game’s style, which required creative problem-solving and attention to detail to deliver a polished, immersive experience.'
     },
     'candy-world-sol': {
-        title: 'Candy World Solitaire',
+        title: 'Solitaire Candy World',
         image: 'images/icons/candy-world-sol/Solitaire_Candyland_1024.png',
         screenshots: [
             'images/screenshots/candy-world-sol/sol-1.webp',
@@ -120,8 +120,8 @@ const portfolioData = {
         organization: 'Super Huge Studios',
         date: '2024',
         url: 'https://play.google.com/store/apps/details?id=com.superhugestudios.candyworld.free.harvest&hl=en_IN',
-        description: 'Candy World Solitaire is a vibrant card adventure blending classic solitaire with delightful candy-themed Tripeak puzzles. Journey through hundreds of handcrafted levels, unlock new features, and meet charming characters in a relaxing, visually rich world.\n\n With over 50,000 downloads on the Play Store, Candy World Solitaire has delighted a growing community of players worldwide.',
-            rolesContributions: 'As a core team member on Candy World Solitaire, I focused on designing and implementing progression systems, including win streaks, a season pass, power-ups, and collectible albums. I also worked to improve game performance and optimize load times, making sure the experience was smooth for players. In addition, I integrated analytics and notification systems to help the team better understand player engagement and retention. My efforts helped ensure the game was polished, reliable, and enjoyable for a growing player base.'
+        description: 'Solitaire Candy World is a vibrant card adventure blending classic solitaire with delightful candy-themed Tripeak puzzles. Journey through hundreds of handcrafted levels, unlock new features, and meet charming characters in a relaxing, visually rich world.\n\n With over 50,000 downloads on the Play Store, Candy World Solitaire has delighted a growing community of players worldwide.',
+            rolesContributions: 'As a core team member on Solitaire Candy World, I focused on designing and implementing progression systems, including win streaks, a season pass, power-ups, and collectible albums. I also worked to improve game performance and optimize load times, making sure the experience was smooth for players. In addition, I integrated analytics and notification systems to help the team better understand player engagement and retention. My efforts helped ensure the game was polished, reliable, and enjoyable for a growing player base.'
     },
     'cat-wool': {
         title: 'Cat Wool',
@@ -137,7 +137,7 @@ const portfolioData = {
         date: 'November, 2025',
         url: 'https://play.google.com/store/apps/details?id=com.superhuge.catwool&hl=en_IN',
         description: 'Cat Wool is a relaxing puzzle game where players sort colorful wool onto cute cats, aiming to complete each level with the best moves possible. The game features handcrafted levels, charming animations, and a soothing atmosphere, making it perfect for unwinding or enjoying a quick mental challenge. With its simple mechanics and delightful visuals, Cat Wool offers a satisfying experience for both casual players and puzzle enthusiasts.',
-        rolesContributions: 'As one half of the duo behind Cat Wool’s core gameplay, I was responsible for bringing the game’s data to life on screen. While my teammate handled the backend logic and data, I took charge of translating that data into dynamic visuals—spawning the puzzle grid and wool, and animating every move and effect with care. I also built a custom toolkit for level creation, which made it much faster and easier for the team to design and test new puzzles. From prototype to release, I focused on making sure every interaction felt smooth and satisfying, helping create a polished, visually engaging experience that players could instantly enjoy.'
+        rolesContributions: 'As one half of the duo behind Cat Wool’s core gameplay, I was responsible for bringing the game’s data to life on screen. While my teammate handled the core logic and data, I took charge of translating that data into dynamic visuals—spawning the puzzle grid and wool, and animating every move and effect with care. I also built a custom toolkit for level creation, which made it much faster and easier for the team to design and test new puzzles. From prototype to release, I focused on making sure every interaction felt smooth and satisfying, helping create a polished, visually engaging experience that players could instantly enjoy.'
     },
     'shootopia': {
         title: 'Shootopia',
