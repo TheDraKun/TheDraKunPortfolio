@@ -739,13 +739,13 @@
             const statsContainer = document.getElementById('about-stats');
             INFO_ITEMS.forEach(item => {
                 const div = document.createElement('div');
-                div.className = "p-4 bg-[#111827]/40 border border-[#1e293b] rounded-2xl hover:border-[#E80368]/40 transition-all group shadow-xl flex flex-col gap-3 justify-center";
+                div.className = "p-4 bg-[#111827]/40 border border-[#1e293b] rounded-2xl shadow-xl flex flex-col gap-3 justify-center";
                 div.innerHTML = `
-                    <div class="w-10 h-10 shrink-0 flex items-center justify-center rounded-xl bg-[#E80368]/10 text-[#E80368] group-hover:bg-[#E80368] group-hover:text-white transition-all">
+                    <div class="w-10 h-10 shrink-0 flex items-center justify-center rounded-xl bg-[#E80368]/10 text-[#E80368]">
                         <i class="${item.icon} text-sm"></i>
                     </div>
                     <div class="min-w-0">
-                        <h4 class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#E80368] mb-1 transition-colors">${item.title}</h4>
+                        <h4 class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#E80368] mb-1">${item.title}</h4>
                         <p class="text-sm font-bold text-white mb-0.5 leading-tight">${item.value}</p>
                         <p class="text-[10px] text-white/50 font-medium italic leading-tight">${item.sub}</p>
                     </div>
@@ -757,8 +757,8 @@
             const skillsGrid = document.getElementById('skills-grid');
             SKILL_CATEGORIES.forEach(cat => {
                 const div = document.createElement('div');
-                div.className = "bg-[#111827]/40 border border-[#1e293b] rounded-2xl p-8 shadow-sm hover:border-[#E80368]/40 transition-colors";
-                const skillsHtml = cat.skills.map(s => `<span class="px-3.5 py-1.5 bg-[#0f172a] border border-[#1e293b] rounded-md text-[13px] font-medium text-white/80 transition-all hover:border-[#E80368]/50 hover:text-white cursor-default">${s}</span>`).join('');
+                div.className = "bg-[#111827]/40 border border-[#1e293b] rounded-2xl p-8 shadow-sm";
+                const skillsHtml = cat.skills.map(s => `<span class="px-3.5 py-1.5 bg-[#0f172a] border border-[#1e293b] rounded-md text-[13px] font-medium text-white/80 cursor-default">${s}</span>`).join('');
                 div.innerHTML = `
                     <div class="flex items-center gap-3 mb-8">
                         <div class="text-[#E80368] text-xl"><i class="${cat.icon}"></i></div>
@@ -773,27 +773,26 @@
             const expList = document.getElementById('experience-list');
             EXPERIENCE.forEach((exp, idx) => {
                 const div = document.createElement('div');
-                div.className = "relative pl-12 group";
+                div.className = "relative pl-12";
                 const achievementsHtml = exp.achievements.map(ach => {
                     const isProject = ach.startsWith('PROJECT: ');
                     const text = isProject ? `<span class="text-[#E80368] font-black uppercase tracking-widest text-xs">${ach.replace('PROJECT: ', '')}</span>` : ach.split(': ').length > 1 ? `<span class="text-white font-bold">${ach.split(': ')[0]}:</span> ${ach.split(': ').slice(1).join(': ')}` : ach;
                     return `
-                        <li class="flex gap-4 group/item ${isProject ? 'mt-8 mb-2' : ''}">
-                            ${!isProject ? '<span class="text-[#E80368] font-black mt-1 group-hover/item:translate-x-1 transition-transform">▶</span>' : ''}
-                            <span class="text-sm md:text-base leading-relaxed transition-colors ${isProject ? 'text-white font-bold' : 'text-white/60 group-hover/item:text-white/90'}">${text}</span>
+                        <li class="flex gap-4 ${isProject ? 'mt-8 mb-2' : ''}">
+                            ${!isProject ? '<span class="text-[#E80368] font-black mt-1">▶</span>' : ''}
+                            <span class="text-sm md:text-base leading-relaxed ${isProject ? 'text-white font-bold' : 'text-white/60'}">${text}</span>
                         </li>
                     `;
                 }).join('');
 
                 div.innerHTML = `
                     <div class="absolute left-4 top-11 -translate-x-1/2">
-                        <div class="h-3 w-3 rounded-full bg-[#E80368] shadow-[0_0_15px_rgba(232,3,104,0.7)] group-hover:scale-125 transition-transform duration-300"></div>
-                        <div class="absolute inset-0 rounded-full border-2 border-[#E80368] opacity-0 scale-75 group-hover:scale-150 group-hover:opacity-0 transition-all duration-500"></div>
+                        <div class="h-3 w-3 rounded-full bg-[#E80368] shadow-[0_0_15px_rgba(232,3,104,0.7)]"></div>
                     </div>
-                    <div class="bg-[#111827]/40 border border-[#1e293b] p-8 md:p-10 rounded-[2rem] hover:border-[#E80368]/30 transition-all shadow-xl group-hover:bg-[#111827]/60">
+                    <div class="bg-[#111827]/40 border border-[#1e293b] p-8 md:p-10 rounded-[2rem] shadow-xl">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                             <div>
-                                <h4 class="text-2xl font-bold text-white mb-1 group-hover:text-[#E80368] transition-colors">${exp.role}</h4>
+                                <h4 class="text-2xl font-bold text-white mb-1">${exp.role}</h4>
                                 <h5 class="text-[#E80368] font-bold text-sm uppercase tracking-widest">${exp.company}</h5>
                             </div>
                             <div class="text-right">

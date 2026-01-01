@@ -18,7 +18,7 @@ const Skills: React.FC = () => {
           {SKILL_CATEGORIES.map((cat, i) => (
             <div 
               key={i} 
-              className="bg-[#111827]/40 border border-[#1e293b] rounded-2xl p-8 shadow-sm hover:border-[#E80368]/40 transition-colors"
+              className="bg-[#111827]/40 border border-[#1e293b] rounded-2xl p-8 shadow-sm"
             >
               <div className="flex items-center gap-3 mb-8">
                 <div className="text-[#E80368] text-xl">
@@ -31,7 +31,7 @@ const Skills: React.FC = () => {
                 {cat.skills.map((skill, index) => (
                   <span 
                     key={index}
-                    className="px-3.5 py-1.5 bg-[#0f172a] border border-[#1e293b] rounded-md text-[13px] font-medium text-white/80 transition-all hover:border-[#E80368]/50 hover:text-white cursor-default"
+                    className="px-3.5 py-1.5 bg-[#0f172a] border border-[#1e293b] rounded-md text-[13px] font-medium text-white/80 cursor-default"
                   >
                     {skill}
                   </span>

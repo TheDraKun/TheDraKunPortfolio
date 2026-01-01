@@ -59,13 +59,13 @@ const About: React.FC = () => {
               {infoItems.map((item, i) => (
                 <div 
                   key={i} 
-                  className="p-4 bg-[#111827]/40 border border-[#1e293b] rounded-2xl hover:border-[#E80368]/40 transition-all group shadow-xl flex flex-col gap-3 justify-center"
+                  className="p-4 bg-[#111827]/40 border border-[#1e293b] rounded-2xl shadow-xl flex flex-col gap-3 justify-center"
                 >
-                  <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-xl bg-[#E80368]/10 text-[#E80368] group-hover:bg-[#E80368] group-hover:text-white transition-all">
+                  <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-xl bg-[#E80368]/10 text-[#E80368]">
                     <i className={`${item.icon} text-sm`}></i>
                   </div>
                   <div className="min-w-0">
-                    <h4 className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#E80368] mb-1 transition-colors">{item.title}</h4>
+                    <h4 className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#E80368] mb-1">{item.title}</h4>
                     <p className="text-sm font-bold text-white mb-0.5 leading-tight">{item.value}</p>
                     <p className="text-[10px] text-white/50 font-medium italic leading-tight">
                       {item.sub}
