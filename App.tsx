@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
+import * as analytics from './utils/analytics';
 
 const App: React.FC = () => {
+  useEffect(() => {
+    analytics.pageview(window.location.pathname);
+  }, []);
+
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -62,6 +67,13 @@ const App: React.FC = () => {
 
     setSubmitStatus('submitting');
     
+    // Track form submission attempt
+    analytics.event({
+      action: 'submit_form',
+      category: 'Contact',
+      label: 'Form Submission Attempt',
+    });
+
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwC--wSJGrTtTU3Wzmd1ef1zd9KuunKf1NhGU7ShnoeMQx9000K0Esm_u_3l7S-lI-nRQ/exec';
 
     const formData = new FormData();
@@ -81,12 +93,28 @@ const App: React.FC = () => {
       }
 
       setSubmitStatus('success');
+      
+      // Track successful submission
+      analytics.event({
+        action: 'submit_form_success',
+        category: 'Contact',
+        label: 'Form Submission Success',
+      });
+
       setFormState({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSubmitStatus('idle'), 5000);
 
     } catch (error) {
       console.error("Submission error:", error);
       setSubmitStatus('error');
+      
+      // Track failed submission
+      analytics.event({
+        action: 'submit_form_error',
+        category: 'Contact',
+        label: 'Form Submission Error',
+      });
+
       setTimeout(() => setSubmitStatus('idle'), 6000);
     }
   };

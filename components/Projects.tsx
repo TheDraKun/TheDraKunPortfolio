@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { PROJECTS } from '../constants';
 import { Project } from '../types';
+import * as analytics from '../utils/analytics';
 
 const isVideoUrl = (url: string | undefined) => {
   if (!url) return false;
@@ -217,6 +218,13 @@ const Projects: React.FC = () => {
     setSelectedProject(project);
     setActiveMediaIndex(0);
     document.body.style.overflow = 'hidden';
+    
+    // Track modal open event
+    analytics.event({
+      action: 'view_project',
+      category: 'Projects',
+      label: project.title
+    });
   };
 
   const closeModal = () => {

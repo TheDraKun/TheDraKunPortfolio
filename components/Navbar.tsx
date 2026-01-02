@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import * as analytics from '../utils/analytics';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -37,6 +38,14 @@ const Navbar: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleCVDownload = () => {
+    analytics.event({
+      action: 'download_cv',
+      category: 'Engagement',
+      label: 'CV Downloaded'
+    });
+  };
+
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
@@ -68,6 +77,7 @@ const Navbar: React.FC = () => {
               href="https://raw.githubusercontent.com/TheDraKun/the-drakun-portfolio/main/Resume_DeepakNelson_2025.pdf" 
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleCVDownload}
               className="ml-4 px-6 py-2 bg-[#E80368] hover:bg-[#ff006e] rounded-lg text-white font-black text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(232,3,104,0.3)]"
             >
               Download CV
@@ -103,6 +113,7 @@ const Navbar: React.FC = () => {
             href="https://raw.githubusercontent.com/TheDraKun/the-drakun-portfolio/main/Resume_DeepakNelson_2025.pdf" 
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleCVDownload}
             className={`mt-4 px-10 py-4 bg-[#E80368] rounded-full text-white font-black text-sm uppercase tracking-[0.2em] shadow-2xl transition-all transform ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
             style={{ transitionDelay: `${navItems.length * 40}ms` }}
           >
