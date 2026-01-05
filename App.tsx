@@ -76,11 +76,32 @@ const App: React.FC = () => {
 
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwC--wSJGrTtTU3Wzmd1ef1zd9KuunKf1NhGU7ShnoeMQx9000K0Esm_u_3l7S-lI-nRQ/exec';
 
+    // 1. Attempt to get location data (Best effort)
+    let locationMeta = { ip: 'Unknown', city: 'Unknown', country: 'Unknown' };
+    try {
+      const locRes = await fetch('https://ipapi.co/json/');
+      if (locRes.ok) {
+        const locData = await locRes.json();
+        locationMeta = {
+          ip: locData.ip || 'Unknown',
+          city: locData.city || 'Unknown',
+          country: locData.country_name || 'Unknown'
+        };
+      }
+    } catch (err) {
+      console.warn('Could not fetch location data', err);
+    }
+
     const formData = new FormData();
     formData.append('name', formState.name);
     formData.append('email', formState.email);
     formData.append('subject', formState.subject);
     formData.append('message', formState.message);
+    
+    // 2. Append Metadata
+    formData.append('ip', locationMeta.ip);
+    formData.append('location', `${locationMeta.city}, ${locationMeta.country}`);
+    formData.append('device', navigator.userAgent);
 
     try {
       const response = await fetch(SCRIPT_URL, {

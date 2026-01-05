@@ -24,7 +24,7 @@ const About: React.FC = () => {
       icon: 'fas fa-rocket', 
       title: 'Success', 
       value: '70K+ Downloads & 4.9 Rating', 
-      sub: 'Candy World Solitaire' 
+      sub: 'Solitaire Candy World' 
     }
   ];
 
